@@ -1,0 +1,3 @@
+[submodule "Assets/RectUtils"]
+	path = Assets/RectUtils
+	url = git@github.com:RickJiangShu/RectUtils.git
