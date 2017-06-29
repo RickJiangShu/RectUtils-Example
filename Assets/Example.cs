@@ -5,8 +5,8 @@ using UnityEditor;
 
 public class Example : MonoBehaviour {
 
-    private const int Width = 5;
-    private const int Height = 5;
+    private const int Width = 40;
+    private const int Height = 30;
     private static Vector2 Pixel = new Vector2(20f, 20f);
 
 
@@ -42,7 +42,7 @@ public class Example : MonoBehaviour {
     public void DrawMap()
     {
         mapRect = new Rectangle(0, 0, Width, Height);
-        map = new int[Height, Width];
+        map = new int[Width, Height];
 
         for (int y = 0; y < Height; y++)
         {
@@ -77,7 +77,7 @@ public class Example : MonoBehaviour {
 
     public void DrawRect(Rectangle rect)
     {
-        print(rect);
+     //   print(rect);
 
         RectTransform liner;
         if (invisibleLiners.Count > 0)
@@ -119,6 +119,8 @@ public class Example : MonoBehaviour {
         List<Rectangle> rects = RectUtils.Split(CheckIsBlock, mapRect);
         foreach (Rectangle rect in rects)
             DrawRect(rect);
+
+        print("Split Rects Count:" + rects.Count);
     }
 
     private bool CheckIsBlock(int x, int y)
